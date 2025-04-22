@@ -1,0 +1,493 @@
+:root {
+    --orange: #FF9933;
+    --white: #FFFFFF;
+    --green: #138808;
+    --dark-blue: #000080;
+    --light-gray: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--light-gray);
+    color: var(--dark-blue);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(to right, var(--orange), var(--white), var(--green));
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    background-color: rgba(255,255,255,0.2);
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-blue);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.chatbot-section {
+    margin: 4rem 0;
+}
+
+.chat-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.chat-header {
+    background: linear-gradient(to right, var(--orange), var(--white), var(--green));
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.chat-header h2 {
+    color: var(--dark-blue);
+    margin-bottom: 0.5rem;
+}
+
+#chatbox {
+    padding: 1.5rem;
+}
+
+#messages {
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: var(--light-gray);
+    border-radius: 5px;
+}
+
+.input-area {
+    display: flex;
+    gap: 1rem;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--dark-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #000060;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--dark-blue);
+    color: white;
+    margin-top: 4rem;
+}
+
+.message {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: var(--dark-blue);
+    color: white;
+    margin-left: auto;
+}
+
+.bot-message {
+    background-color: var(--light-gray);
+    color: var(--dark-blue);
+    margin-right: auto;
+}
+
+.message-content {
+    word-wrap: break-word;
+}
+
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    max-width: 80%;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    opacity: 1;
+}
+
+.typing-dots {
+    display: flex;
+    gap: 4px;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--dark-blue);
+    border-radius: 50%;
+    animation: typingAnimation 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) { animation-delay: 0s; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingAnimation {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-6px); }
+}
+
+.message-content strong {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.message-content p {
+    margin: 0;
+}
+
+/* Loading animation */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.message[data-loading="true"] {
+    animation: pulse 1.5s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Forum Page Styles */
+.forum-header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.forum-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.new-post {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.new-post form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.new-post textarea {
+    height: 150px;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.posts-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post {
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+}
+
+.post:last-child {
+    border-bottom: none;
+}
+
+.post-title {
+    font-size: 1.2rem;
+    color: var(--dark-blue);
+    margin-bottom: 0.5rem;
+}
+
+.post-content {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Forecast Page Styles */
+.forecast-header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.forecast-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.state-predictions {
+    display: grid;
+    gap: 1rem;
+}
+
+.state-card {
+    background: var(--light-gray);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.prediction-bar {
+    background: #eee;
+    height: 25px;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+    overflow: hidden;
+}
+
+.bar-fill {
+    background: var(--dark-blue);
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+}
+
+.sentiment-analysis {
+    display: grid;
+    gap: 1rem;
+}
+
+.sentiment-item {
+    background: var(--light-gray);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.sentiment-bar {
+    height: 25px;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: white;
+}
+
+.sentiment-bar.positive {
+    background: var(--green);
+}
+
+.sentiment-bar.negative {
+    background: #ff4444;
+}
+
+/* Parties Page Styles */
+.parties-header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.parties-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.party-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.party-logo {
+    background: var(--light-gray);
+    padding: 2rem;
+    text-align: center;
+}
+
+.party-logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.party-info {
+    padding: 2rem;
+}
+
+.party-leader, .party-ideology {
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+.party-manifesto {
+    margin: 1.5rem 0;
+}
+
+.party-manifesto ul {
+    list-style: none;
+    padding: 0;
+}
+
+.party-manifesto li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.party-manifesto li:last-child {
+    border-bottom: none;
+}
+
+.view-details {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.regional-parties {
+    display: grid;
+    gap: 1rem;
+}
+
+.regional-party {
+    background: var(--light-gray);
+    padding: 1rem;
+    border-radius: 5px;
+}

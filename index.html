@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Election Assistant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Indian Election Assistant</div>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="forecast.html">Forecasts</a></li>
+                <li><a href="parties.html">Parties</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Your Guide to Indian Elections</h1>
+            <p>Get accurate information, discuss with fellow citizens, and stay updated with election forecasts</p>
+        </section>
+
+        <section class="chatbot-section">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h2>Election Assistant</h2>
+                    <p>Ask me anything about Indian elections</p>
+                </div>
+                <div id="chatbox">
+                    <div id="messages"></div>
+                    <div class="input-area">
+                        <input type="text" id="userInput" placeholder="Ask about Indian elections...">
+                        <button onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Live Forum</h3>
+                <p>Join discussions with fellow citizens about election topics</p>
+            </div>
+            <div class="feature-card">
+                <h3>Election Forecasts</h3>
+                <p>View predictions and analysis of upcoming elections</p>
+            </div>
+            <div class="feature-card">
+                <h3>Party Information</h3>
+                <p>Learn about political parties and their manifestos</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Indian Election Assistant. All rights reserved.</p>
+    </footer>
+
+    <script src="js/chatbot.js"></script>
+</body>
+</html> 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Forum - Indian Election Assistant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Indian Election Assistant</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="forum.html" class="active">Forum</a></li>
+                <li><a href="forecast.html">Forecasts</a></li>
+                <li><a href="parties.html">Parties</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="forum-header">
+            <h1>Election Discussion Forum</h1>
+            <p>Join the conversation about Indian elections and share your views</p>
+        </section>
+
+        <section class="forum-container">
+            <div class="new-post">
+                <h2>Create New Post</h2>
+                <form id="postForm">
+                    <input type="text" id="postTitle" placeholder="Post Title" required>
+                    <textarea id="postContent" placeholder="Share your thoughts..." required></textarea>
+                    <button type="submit">Post</button>
+                </form>
+            </div>
+
+            <div class="posts-container">
+                <h2>Recent Discussions</h2>
+                <div id="posts">
+                    <!-- Posts will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Indian Election Assistant. All rights reserved.</p>
+    </footer>
+
+    <script src="js/forum.js"></script>
+</body>
+</html> 

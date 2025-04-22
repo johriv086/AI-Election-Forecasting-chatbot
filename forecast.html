@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Forecasts - Indian Election Assistant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Indian Election Assistant</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="forecast.html" class="active">Forecasts</a></li>
+                <li><a href="parties.html">Parties</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="forecast-header">
+            <h1>Election Forecasts & Analysis</h1>
+            <p>Stay updated with the latest election predictions and trends</p>
+        </section>
+
+        <section class="forecast-container">
+            <div class="chart-section">
+                <div class="chart-container">
+                    <h2 class="chart-title">Lok Sabha Seat Predictions</h2>
+                    <div class="chart-wrapper">
+                        <canvas id="seatChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h2 class="chart-title">Vote Share Trends</h2>
+                    <div class="chart-wrapper">
+                        <canvas id="voteShareChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="state-predictions" id="statePredictions">
+                <!-- State predictions will be dynamically added here -->
+            </div>
+
+            <div class="forecast-card">
+                <h2>Key Issues & Sentiment Analysis</h2>
+                <div class="sentiment-analysis">
+                    <div class="sentiment-item">
+                        <h3>Economy</h3>
+                        <div class="sentiment-bar positive">75% Positive</div>
+                    </div>
+                    <div class="sentiment-item">
+                        <h3>National Security</h3>
+                        <div class="sentiment-bar positive">65% Positive</div>
+                    </div>
+                    <div class="sentiment-item">
+                        <h3>Employment</h3>
+                        <div class="sentiment-bar negative">60% Negative</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Indian Election Assistant. All rights reserved.</p>
+    </footer>
+
+    <script src="js/forecast.js"></script>
+</body>
+</html> 
